@@ -1,0 +1,34 @@
+﻿Build started 06.01.2016 16:31:37.
+     1>Project "D:\Projekte\20151006_GenericControl\GenericControl\GenericControl\KRC2_GC_Managed\KRC2_GC_Managed.vcxproj" on node 2 (Rebuild target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /Zi /clr /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D WINDOWS /D _WINDLL /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\KRC2_GC_Managed.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\mscorlib.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt /clr:nostdlib Stdafx.cpp
+         Stdafx.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /Zi /clr /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D WINDOWS /D _WINDLL /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\KRC2_GC_Managed.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\mscorlib.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt /clr:nostdlib AssemblyInfo.cpp KRC2_GC_Managed.cpp
+         AssemblyInfo.cpp
+         KRC2_GC_Managed.cpp
+     1>D:\Projekte\20151006_GenericControl\GenericControl\GenericControl\KR30_16_GC_Driver_Native\KRC2_GC.h(73): warning C4251: 'KRC2_GC::sReceivedXMLData' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'KRC2_GC'
+     1>D:\Projekte\20151006_GenericControl\GenericControl\GenericControl\KR30_16_GC_Driver_Native\KRC2_GC.h(74): warning C4251: 'KRC2_GC::sPreparedXMLData' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'KRC2_GC'
+     1>D:\Projekte\20151006_GenericControl\GenericControl\GenericControl\KR30_16_GC_Driver_Native\KRC2_GC.h(76): warning C4251: 'KRC2_GC::sXMLResponseTemplate' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'KRC2_GC'
+     1>D:\Projekte\20151006_GenericControl\GenericControl\GenericControl\KR30_16_GC_Driver_Native\KRC2_GC.h(78): warning C4251: 'KRC2_GC::cMessageReceivedDelegators' : class 'std::vector<KRC2Delegator *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'KRC2_GC'
+                 with
+                 [
+                     _Ty=KRC2Delegator *
+                 ]
+     1>D:\Projekte\20151006_GenericControl\GenericControl\GenericControl\KR30_16_GC_Driver_Native\KRC2_GC.h(85): warning C4251: 'KRC2_GC::sStatus' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'KRC2_GC'
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /clr /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D WINDOWS /D _WINDLL /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /TP /analyze- /errorReport:prompt "C:\Users\pll\AppData\Local\Temp\.NETFramework,Version=v4.0.AssemblyAttributes.cpp"
+         .NETFramework,Version=v4.0.AssemblyAttributes.cpp
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /D _UNICODE /D UNICODE /l"0x0409" /nologo /fo"Debug\app.res" app.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Projekte\20151006_GenericControl\GenericControl\GenericControl\Debug\KRC2_GC_Managed.dll" /INCREMENTAL /NOLOGO KRC2_GC_Native.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Projekte\20151006_GenericControl\GenericControl\GenericControl\Debug\KRC2_GC_Managed.pdb" /ASSEMBLYDEBUG /TLBID:1 /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 /DLL Debug\app.res
+         Debug\AssemblyInfo.obj
+         Debug\KRC2_GC_Managed.obj
+         Debug\Stdafx.obj
+         "Debug\.NETFramework,Version=v4.0.AssemblyAttributes.obj"
+         KRC2_GC_Managed.vcxproj -> D:\Projekte\20151006_GenericControl\GenericControl\GenericControl\Debug\KRC2_GC_Managed.dll
+     1>Done Building Project "D:\Projekte\20151006_GenericControl\GenericControl\GenericControl\KRC2_GC_Managed\KRC2_GC_Managed.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.49

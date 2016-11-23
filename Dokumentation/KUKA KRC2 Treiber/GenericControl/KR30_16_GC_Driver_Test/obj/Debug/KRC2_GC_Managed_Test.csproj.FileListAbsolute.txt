@@ -1,0 +1,14 @@
+D:\Projekte\20151006_GenericControl\GenericControl\GenericControl\KR30_16_GC_Driver_Test\bin\Debug\KR30_16_GC_Driver_Test.exe
+D:\Projekte\20151006_GenericControl\GenericControl\GenericControl\KR30_16_GC_Driver_Test\bin\Debug\KR30_16_GC_Driver_Test.pdb
+D:\Projekte\20151006_GenericControl\GenericControl\GenericControl\KR30_16_GC_Driver_Test\bin\Debug\KRC2_GC_Managed.dll
+D:\Projekte\20151006_GenericControl\GenericControl\GenericControl\KR30_16_GC_Driver_Test\bin\Debug\KRC2_GC_Managed.pdb
+D:\Projekte\20151006_GenericControl\GenericControl\GenericControl\KR30_16_GC_Driver_Test\obj\Debug\KRC2_GC_Managed_Test.csprojResolveAssemblyReference.cache
+D:\Projekte\20151006_GenericControl\GenericControl\GenericControl\KR30_16_GC_Driver_Test\obj\Debug\MainWindow.baml
+D:\Projekte\20151006_GenericControl\GenericControl\GenericControl\KR30_16_GC_Driver_Test\obj\Debug\MainWindow.g.cs
+D:\Projekte\20151006_GenericControl\GenericControl\GenericControl\KR30_16_GC_Driver_Test\obj\Debug\App.g.cs
+D:\Projekte\20151006_GenericControl\GenericControl\GenericControl\KR30_16_GC_Driver_Test\obj\Debug\KR30_16_GC_Driver_Test_MarkupCompile.cache
+D:\Projekte\20151006_GenericControl\GenericControl\GenericControl\KR30_16_GC_Driver_Test\obj\Debug\KR30_16_GC_Driver_Test.g.resources
+D:\Projekte\20151006_GenericControl\GenericControl\GenericControl\KR30_16_GC_Driver_Test\obj\Debug\KR30_16_GC_Driver_Test.Properties.Resources.resources
+D:\Projekte\20151006_GenericControl\GenericControl\GenericControl\KR30_16_GC_Driver_Test\obj\Debug\KRC2_GC_Managed_Test.csproj.GenerateResource.Cache
+D:\Projekte\20151006_GenericControl\GenericControl\GenericControl\KR30_16_GC_Driver_Test\obj\Debug\KR30_16_GC_Driver_Test.exe
+D:\Projekte\20151006_GenericControl\GenericControl\GenericControl\KR30_16_GC_Driver_Test\obj\Debug\KR30_16_GC_Driver_Test.pdb

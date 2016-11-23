@@ -1,0 +1,32 @@
+﻿Build started 02.03.2016 14:16:34.
+     1>Project "D:\Projekte\20151006_GenericControl\GenericControl\GenericControl\KR30_16_GC_Driver_Native\KR30_16_GC_Driver_Native.vcxproj" on node 2 (Build target(s)).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(381,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (KR30_16_GC_Driver_Native.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D KRC2_GC_NATIVE_EXPORTS /D WINDOWS /D _WINDLL /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"common.h" /Fp"Debug\KRC2_GC_Native.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt KRC2_GC.cpp SimpleThread.cpp
+         SimpleThread.cpp
+         KRC2_GC.cpp
+     1>d:\projekte\20151006_genericcontrol\genericcontrol\genericcontrol\kr30_16_gc_driver_native\krc2_gc.h(73): warning C4251: 'KRC2_GC::sReceivedXMLData' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'KRC2_GC'
+     1>d:\projekte\20151006_genericcontrol\genericcontrol\genericcontrol\kr30_16_gc_driver_native\krc2_gc.h(74): warning C4251: 'KRC2_GC::sPreparedXMLData' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'KRC2_GC'
+     1>d:\projekte\20151006_genericcontrol\genericcontrol\genericcontrol\kr30_16_gc_driver_native\krc2_gc.h(76): warning C4251: 'KRC2_GC::sXMLResponseTemplate' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'KRC2_GC'
+     1>d:\projekte\20151006_genericcontrol\genericcontrol\genericcontrol\kr30_16_gc_driver_native\krc2_gc.h(78): warning C4251: 'KRC2_GC::cMessageReceivedDelegators' : class 'std::vector<KRC2Delegator *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'KRC2_GC'
+                 with
+                 [
+                     _Ty=KRC2Delegator *
+                 ]
+     1>d:\projekte\20151006_genericcontrol\genericcontrol\genericcontrol\kr30_16_gc_driver_native\krc2_gc.h(85): warning C4251: 'KRC2_GC::sStatus' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'KRC2_GC'
+         Generating Code...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Projekte\20151006_GenericControl\GenericControl\GenericControl\Debug\KRC2_GC_Native.dll" /INCREMENTAL /NOLOGO Ws2_32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Projekte\20151006_GenericControl\GenericControl\GenericControl\Debug\KRC2_GC_Native.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Projekte\20151006_GenericControl\GenericControl\GenericControl\Debug\KRC2_GC_Native.lib" /MACHINE:X86 /DLL Debug\Resource.res
+         Debug\dllmain.obj
+         Debug\KRC2_GC.obj
+         Debug\LogManager.obj
+         Debug\SimpleThread.obj
+         Debug\common.obj
+         Debug\TCPUDPClientThread.obj
+         Debug\TCPUDPServer.obj
+         KR30_16_GC_Driver_Native.vcxproj -> D:\Projekte\20151006_GenericControl\GenericControl\GenericControl\Debug\KRC2_GC_Native.dll
+     1>Done Building Project "D:\Projekte\20151006_GenericControl\GenericControl\GenericControl\KR30_16_GC_Driver_Native\KR30_16_GC_Driver_Native.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.41

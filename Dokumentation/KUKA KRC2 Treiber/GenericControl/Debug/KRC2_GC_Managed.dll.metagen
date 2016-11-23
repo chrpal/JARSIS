@@ -1,0 +1,78 @@
+ImageRuntimeVersion: v4.0.30319
+Assembly KRC2_GC_Managed, Version=1.0.*, Culture=Invariant Language (Invariant Country): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class RobotDrivers.KRC2_MessageReceivedDelegator: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    BeginInvoke(AsyncCallback, Object): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+Class RobotDrivers.KRC2_ErrorOccurred: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    BeginInvoke(AsyncCallback, Object): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+Class RobotDrivers.KRC2_GC_M: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Fields:
+    RobotDrivers.KRC2_MessageReceivedDelegator cMessageReceivedDelegator : Public
+    RobotDrivers.KRC2_ErrorOccurred cErrorOccurred : Public
+  Methods:
+    InitializeTCP(String, UInt16): PrivateScope, Public, HideBySig
+    InitializeUDP(String, UInt16): PrivateScope, Public, HideBySig
+    Terminate(): PrivateScope, Public, HideBySig
+    Initialized(): PrivateScope, Public, HideBySig
+    ErrorOccurred(): PrivateScope, Public, HideBySig
+    GetStatus(): PrivateScope, Public, HideBySig
+    MovePTP(Double, Double, Double, Double, Double, Double): PrivateScope, Public, HideBySig
+    MoveLIN(Double, Double, Double, Double, Double, Double): PrivateScope, Public, HideBySig
+    MoveCIRC(): PrivateScope, Public, HideBySig
+    SetPathCorrection(Double, Double, Double, Double, Double, Double): PrivateScope, Public, HideBySig
+    ResetPathCorrection(): PrivateScope, Public, HideBySig
+    SetPathCorrectionX(Double): PrivateScope, Public, HideBySig
+    SetPathCorrectionY(Double): PrivateScope, Public, HideBySig
+    SetPathCorrectionZ(Double): PrivateScope, Public, HideBySig
+    SetPathCorrectionA(Double): PrivateScope, Public, HideBySig
+    SetPathCorrectionB(Double): PrivateScope, Public, HideBySig
+    SetPathCorrectionC(Double): PrivateScope, Public, HideBySig
+    GetPathCorrection(Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
+    GetPathCorrection(): PrivateScope, Public, HideBySig
+    GetJoints(Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
+    GetJoints(): PrivateScope, Public, HideBySig
+    SetVelocity(Double): PrivateScope, Public, HideBySig
+    SetVelocityPercentage(Double): PrivateScope, Public, HideBySig
+    SetAcceleration(Double): PrivateScope, Public, HideBySig
+    SetAccelerationPercentage(Double): PrivateScope, Public, HideBySig
+    SetRounding(Double): PrivateScope, Public, HideBySig
+    SetRoundingPercentage(Double): PrivateScope, Public, HideBySig
+    GetVelocity(Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
+    GetVelocity(): PrivateScope, Public, HideBySig
+    GetVelocityPercentage(Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
+    GetVelocityPercentage(): PrivateScope, Public, HideBySig
+    GetAcceleration(Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
+    GetAcceleration(): PrivateScope, Public, HideBySig
+    GetAccelerationPercentage(Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
+    GetAccelerationPercentage(): PrivateScope, Public, HideBySig
+    GetRounding(Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
+    GetRounding(): PrivateScope, Public, HideBySig
+    GetRoundingPercentage(Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
+    GetRoundingPercentage(): PrivateScope, Public, HideBySig
+    SetCounter(Double): PrivateScope, Public, HideBySig
+    ResetCounter(): PrivateScope, Public, HideBySig
+    IncrementCounter(Double): PrivateScope, Public, HideBySig
+    DecrementCounter(Double): PrivateScope, Public, HideBySig
+    GetCounter(): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig

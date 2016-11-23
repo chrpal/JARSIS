@@ -1,0 +1,29 @@
+﻿Build started 02.03.2016 14:09:16.
+     1>Project "D:\Projekte\20151006_GenericControl\GenericControl\GenericControl\KR30_16_GC_Driver_Native_Test\KR30_16_GC_Driver_Native_Test.vcxproj" on node 2 (Build target(s)).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(381,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (KR30_16_GC_Driver_Native_Test.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"common.h" /Fp"Debug\KRC2_GC_Native_Test.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt KR30_16_GC_Driver_Native_Test.cpp
+         KR30_16_GC_Driver_Native_Test.cpp
+     1>d:\projekte\20151006_genericcontrol\genericcontrol\genericcontrol\kr30_16_gc_driver_native_test\kr30_16_gc_driver_native_test.cpp(4): warning C4005: 'WINDOWS' : macro redefinition
+                 command-line arguments :  see previous definition of 'WINDOWS'
+     1>d:\projekte\20151006_genericcontrol\genericcontrol\genericcontrol\kr30_16_gc_driver_native\krc2_gc.h(73): warning C4251: 'KRC2_GC::sReceivedXMLData' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'KRC2_GC'
+     1>d:\projekte\20151006_genericcontrol\genericcontrol\genericcontrol\kr30_16_gc_driver_native\krc2_gc.h(74): warning C4251: 'KRC2_GC::sPreparedXMLData' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'KRC2_GC'
+     1>d:\projekte\20151006_genericcontrol\genericcontrol\genericcontrol\kr30_16_gc_driver_native\krc2_gc.h(76): warning C4251: 'KRC2_GC::sXMLResponseTemplate' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'KRC2_GC'
+     1>d:\projekte\20151006_genericcontrol\genericcontrol\genericcontrol\kr30_16_gc_driver_native\krc2_gc.h(78): warning C4251: 'KRC2_GC::cMessageReceivedDelegators' : class 'std::vector<KRC2Delegator *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'KRC2_GC'
+                 with
+                 [
+                     _Ty=KRC2Delegator *
+                 ]
+     1>d:\projekte\20151006_genericcontrol\genericcontrol\genericcontrol\kr30_16_gc_driver_native\krc2_gc.h(85): warning C4251: 'KRC2_GC::sStatus' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'KRC2_GC'
+     1>d:\projekte\20151006_genericcontrol\genericcontrol\genericcontrol\kr30_16_gc_driver_native_test\kr30_16_gc_driver_native_test.cpp(45): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+     1>d:\projekte\20151006_genericcontrol\genericcontrol\genericcontrol\kr30_16_gc_driver_native_test\kr30_16_gc_driver_native_test.cpp(64): warning C4996: '_sleep': This function or variable has been superceded by newer library or operating system functionality. Consider using Sleep instead. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdlib.h(911) : see declaration of '_sleep'
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Projekte\20151006_GenericControl\GenericControl\GenericControl\Debug\KRC2_GC_Native_Test.exe" /INCREMENTAL /NOLOGO KRC2_GC_Native.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Projekte\20151006_GenericControl\GenericControl\GenericControl\Debug\KRC2_GC_Native_Test.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Projekte\20151006_GenericControl\GenericControl\GenericControl\Debug\KRC2_GC_Native_Test.lib" /MACHINE:X86 Debug\KR30_16_GC_Driver_Native_Test.obj
+         Debug\common.obj
+         KR30_16_GC_Driver_Native_Test.vcxproj -> D:\Projekte\20151006_GenericControl\GenericControl\GenericControl\Debug\KRC2_GC_Native_Test.exe
+     1>Done Building Project "D:\Projekte\20151006_GenericControl\GenericControl\GenericControl\KR30_16_GC_Driver_Native_Test\KR30_16_GC_Driver_Native_Test.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.58

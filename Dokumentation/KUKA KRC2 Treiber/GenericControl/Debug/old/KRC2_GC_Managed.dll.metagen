@@ -1,0 +1,52 @@
+ImageRuntimeVersion: v4.0.30319
+Assembly KRC2_GC_Managed, Version=1.0.*, Culture=Invariant Language (Invariant Country): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class RobotDrivers.KRC2_GC_M: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Methods:
+    InitializeTCP(String, UInt16): PrivateScope, Public, HideBySig
+    InitializeUDP(String, UInt16): PrivateScope, Public, HideBySig
+    Terminate(): PrivateScope, Public, HideBySig
+    Initialized(): PrivateScope, Public, HideBySig
+    ErrorOccurred(): PrivateScope, Public, HideBySig
+    GetStatus(): PrivateScope, Public, HideBySig
+    MovePTP(Double, Double, Double, Double, Double, Double): PrivateScope, Public, HideBySig
+    MoveLIN(Double, Double, Double, Double, Double, Double): PrivateScope, Public, HideBySig
+    MoveCIRC(): PrivateScope, Public, HideBySig
+    SetPathCorrection(Double, Double, Double, Double, Double, Double): PrivateScope, Public, HideBySig
+    ResetPathCorrection(): PrivateScope, Public, HideBySig
+    SetPathCorrectionX(Double): PrivateScope, Public, HideBySig
+    SetPathCorrectionY(Double): PrivateScope, Public, HideBySig
+    SetPathCorrectionZ(Double): PrivateScope, Public, HideBySig
+    SetPathCorrectionA(Double): PrivateScope, Public, HideBySig
+    SetPathCorrectionB(Double): PrivateScope, Public, HideBySig
+    SetPathCorrectionC(Double): PrivateScope, Public, HideBySig
+    GetPathCorrection(Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
+    SetVelocity(Double): PrivateScope, Public, HideBySig
+    SetVelocityPercentage(Double): PrivateScope, Public, HideBySig
+    SetAcceleration(Double): PrivateScope, Public, HideBySig
+    SetAccelerationPercentage(Double): PrivateScope, Public, HideBySig
+    SetRounding(Double): PrivateScope, Public, HideBySig
+    SetRoundingPercentage(Double): PrivateScope, Public, HideBySig
+    GetVelocity(Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
+    GetVelocityPercentage(Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
+    GetAcceleration(Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
+    GetAccelerationPercentage(Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
+    GetRounding(Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
+    GetRoundingPercentage(Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
+    SetCounter(Double): PrivateScope, Public, HideBySig
+    ResetCounter(): PrivateScope, Public, HideBySig
+    IncrementCounter(Double): PrivateScope, Public, HideBySig
+    DecrementCounter(Double): PrivateScope, Public, HideBySig
+    GetCounter(): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
