@@ -1,0 +1,79 @@
+<!DOCTYPE CrossStudio_Project_File>
+<solution Name="iot_ipv6_icmp_pca10028" target="8" version="2">
+  <project Name="iot_ipv6_icmp_pca10028">
+    <configuration
+      Name="Common"
+      Target="nRF51422_xxAC"
+      arm_architecture="v6M"
+      arm_core_type="Cortex-M0"
+      arm_endian="Little"
+      arm_simulator_memory_simulation_parameter="RX 00000000,00040000,FFFFFFFF;RWX 20000000,00008000,CDCDCDCD"
+      arm_target_interface_type="SWD"
+      debug_start_from_entry_point_symbol="No"
+      debug_target_connection="J-Link"
+      linker_memory_map_file="$(StudioDir)/samples/MemoryMap_ARM.xml"
+      linker_memory_map_macros="FLASH_START=0x00000000;FLASH_SIZE=0x00040000;SRAM_START=0x20000000;SRAM_SIZE=0x00008000"
+      linker_section_placement_file="$(StudioDir)/targets/Cortex_M/flash_placement.xml"
+      project_directory=""
+      project_type="Executable"
+      property_groups_file_path="JLink/propertyGroups_CM.xml" />
+    <folder Name="Internal Files">
+      <file file_name="$(StudioDir)/source/thumb_crt0.s" />
+      <file file_name="$(StudioDir)/samples/Cortex_M_Startup.s" />
+    </folder>
+    <configuration
+      Name="nrf51422_xxac_s1xx_iot"
+      c_preprocessor_definitions=";__HEAP_SIZE=512;BOARD_PCA10028;BLE_STACK_SUPPORT_REQD;S110;BSP_DEFINES_ONLY;NRF51;SOFTDEVICE_PRESENT;SWI_DISABLE0"
+      c_user_include_directories="$(PackagesDir)/CMSIS_4/CMSIS/Include;../../../config;../../..;../../../../../bsp;../../../../../../components/softdevice/s1xx_iot/headers;../../../../../../components/ble/common;../../../../../../components/drivers_nrf/uart;../../../../../../components/libraries/timer;../../../../../../components/softdevice/common/softdevice_handler;../../../../../../components/libraries/button;../../../../../../components/libraries/scheduler;../../../../../../components/iot/ipv6_stack/include;../../../../../../components/iot/ble_6lowpan;../../../../../../components/device;../../../../../../components/toolchain;../../../../../../components/libraries/util;../../../../../../components/libraries/fifo;../../../../../../components/drivers_nrf/gpiote;../../../../../../components/drivers_nrf/config;../../../../../../components/drivers_nrf/common;../../../../../../components/drivers_nrf/hal;../../../../../../components/libraries/mem_manager;../../../../../../components/iot/include;../../../../../../components/iot/ipv6_stack/pbuffer;../../../../../../components/iot/context_manager;../../../../../../components/iot/ipv6_stack/utils;../../../../../../components/iot/ipv6_stack/udp;../../../../../../components/iot/ipv6_stack/icmp6;../../../../../../components/iot/ble_ipsp;../../../../../../components/libraries/trace" />
+    <configuration Name="External Keil" c_additional_options="--c99" />
+    <folder Name="Application">
+      <file file_name="../../../main.c" />
+    </folder>
+    <folder Name="Documentation">
+      <file file_name="../../../Abstract.txt" />
+      <file file_name="../../../license.txt" />
+    </folder>
+    <folder Name="nRF_BLE">
+      <file file_name="../../../../../../components/ble/common/ble_advdata.c" />
+      <file file_name="../../../../../../components/ble/common/ble_srv_common.c" />
+    </folder>
+    <folder Name="nRF_Drivers">
+      <file file_name="../../../../../../components/drivers_nrf/uart/app_uart_fifo.c" />
+      <file file_name="../../../../../../components/drivers_nrf/hal/nrf_delay.c" />
+      <file file_name="../../../../../../components/drivers_nrf/common/nrf_drv_common.c" />
+      <file file_name="../../../../../../components/drivers_nrf/gpiote/nrf_drv_gpiote.c" />
+    </folder>
+    <folder Name="nRF_IoT">
+      <file file_name="../../../../../../components/iot/ble_6lowpan/lib/ble_6lowpan.lib">
+        <configuration Name="External Keil" file_type="Library" />
+      </file>
+      <file file_name="../../../../../../components/iot/ipv6_stack/icmp6/icmp6.c" />
+      <file file_name="../../../../../../components/iot/context_manager/iot_context_manager.c" />
+      <file file_name="../../../../../../components/iot/ipv6_stack/pbuffer/iot_pbuffer.c" />
+      <file file_name="../../../../../../components/iot/ipv6_stack/ipv6/ipv6.c" />
+      <file file_name="../../../../../../components/iot/ipv6_stack/utils/ipv6_utils.c" />
+      <file file_name="../../../../../../components/iot/ipv6_stack/udp/udp6.c" />
+    </folder>
+    <folder Name="nRF_Libraries">
+      <file file_name="../../../../../../components/libraries/button/app_button.c" />
+      <file file_name="../../../../../../components/libraries/util/app_error.c" />
+      <file file_name="../../../../../../components/libraries/fifo/app_fifo.c" />
+      <file file_name="../../../../../../components/libraries/scheduler/app_scheduler.c" />
+      <file file_name="../../../../../../components/libraries/timer/app_timer.c" />
+      <file file_name="../../../../../../components/libraries/timer/app_timer_appsh.c" />
+      <file file_name="../../../../../../components/libraries/trace/app_trace.c" />
+      <file file_name="../../../../../../components/libraries/mem_manager/mem_manager.c" />
+      <file file_name="../../../../../../components/libraries/util/nrf_assert.c" />
+      <file file_name="../../../../../../components/libraries/uart/retarget.c" />
+    </folder>
+    <folder Name="nRF_SoftDevice">
+      <file file_name="../../../../../../components/softdevice/s1xx_iot/doc/s1xx-iot-prototype2_licence_agreement.txt" />
+      <file file_name="../../../../../../components/softdevice/common/softdevice_handler/softdevice_handler.c" />
+      <file file_name="../../../../../../components/softdevice/common/softdevice_handler/softdevice_handler_appsh.c" />
+    </folder>
+  </project>
+  <configuration Name="Internal" hidden="Yes" />
+  <configuration
+    Name="nrf51422_xxac_s1xx_iot"
+    inherited_configurations="Internal" />
+</solution>
