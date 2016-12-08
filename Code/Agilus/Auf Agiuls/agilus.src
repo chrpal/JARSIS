@@ -1,0 +1,300 @@
+&ACCESS RVP
+&REL 22
+&PARAM TEMPLATE = C:\KRC\Roboter\Template\vorgabe
+&PARAM EDITMASK = *
+DEF modemo()
+
+; =============================================
+; 
+; RobCom Test: ETHERNET communication in CmdMode
+; Realtime UDP data exchange with server application
+;
+; =============================================
+; RSI variables
+DECL INT ret
+DECL INT id
+
+; Targets for movement
+DECL AXIS target_axis
+DECL POS target_pos
+
+; RSI command
+SIGNAL command $OUT[305] TO $OUT[312]
+
+;FOLD INI
+  ;FOLD BASISTECH INI
+    GLOBAL INTERRUPT DECL 3 WHEN $STOPMESS==TRUE DO IR_STOPM ( )
+    INTERRUPT ON 3 
+    BAS (#INITMOV,0 )
+  ;ENDFOLD (BASISTECH INI)
+  ;FOLD USER INI
+  ;ENDFOLD (USER INI)
+;ENDFOLD (INI)
+
+; Move to start position
+PTP $POS_ACT
+
+; Create RSI Context 
+ret = RSI_CREATE("cmdMode.rsi", id, TRUE)
+IF (ret <> RSIOK) THEN
+  HALT
+ENDIF
+
+; Start RSI execution
+ret = RSI_ON(#RELATIVE)
+IF (ret <> RSIOK) THEN
+  HALT
+ENDIF
+
+; =============================================
+; Execute commands in Main loop
+
+command = 0
+LOOP
+; Wait for command acknowledgement
+WAIT SEC 0.1
+SWITCH command
+	CASE 0 ;nothing
+
+	CASE 1 ;PTP_AXIS
+		extract_target_axis(target_axis)
+		copy_axis_vel_acc()
+		PTP target_axis
+		command = 0
+   
+	CASE 2 ;PTP_AXIS_REL
+		extract_target_axis(target_axis)
+		copy_axis_vel_acc()
+		PTP_REL target_axis
+		command = 0;
+	  
+	CASE 3 ;PTP_POS
+		extract_target_pos(target_pos)
+		copy_axis_vel_acc()
+		set_null_world()
+		PTP target_pos
+		command = 0
+   
+	CASE 4 ;PTP_POS_REL
+		extract_target_pos(target_pos)
+      copy_axis_vel_acc()
+		set_null_world()
+		PTP_REL target_pos
+		command = 0
+	  
+	CASE 5 ;LIN
+		extract_target_pos(target_pos)
+      ;copy_typed_vel_acc()
+		set_null_world()
+		LIN target_pos
+		command = 0
+	  
+	CASE 6 ;LIN_REL
+		extract_target_pos(target_pos)
+      ;copy_typed_vel_acc()
+		set_null_world()
+		LIN_REL target_pos
+		command = 0
+	
+	CASE 11 ; Toggle gripper
+		IF $OUT[321] THEN
+			do_gripper_open()
+		ELSE
+			do_gripper_close()
+		ENDIF
+	   command = 0
+		
+	CASE 12 ; Toggle screwdriver
+	   IF $OUT[321] THEN
+	      ; Activate screwdriver
+	      WAIT SEC 1
+	      $OUT[190] = TRUE
+	   ELSE
+	      ; Deactivate screwdriver
+	      $OUT[190] = FALSE
+      ENDIF
+		command = 0
+	
+	CASE 14 ; Change tool
+		SWITCH $SEN_PINT[1]
+			CASE 1 ; No tool
+				IF $IN[101] == true THEN
+					handle_gbig_to_mag()
+				ENDIF
+				IF $IN[100] == true THEN
+					handle_sdriver_to_mag()
+				ENDIF
+            IF $IN[102] == true THEN
+               handle_pdem_to_mag()
+            ENDIF
+			CASE 2 ; Big gripper
+            IF (($IN[100] == true) AND ($IN[101] == FALSE) AND ($IN[102] == FALSE)) THEN
+            			handle_sdriver_to_mag()
+            ELSE
+              IF (($IN[100] == false) AND ($IN[101] == FALSE) AND ($IN[102] == true)) THEN
+                     handle_pdem_to_mag()
+              ENDIF
+            ENDIF
+
+            IF (($IN[100] == false) AND ($IN[101] == false) AND ($IN[102] == FALSE))  THEN
+         				handle_gbig_from_mag()
+            ENDIF
+
+         CASE 3 ; ProDemo
+            IF (($IN[100] == true) AND ($IN[101] == FALSE) AND ($IN[102] == FALSE)) THEN
+                     handle_sdriver_to_mag()
+            ELSE
+              IF (($IN[100] == false) AND ($IN[101] == true) AND ($IN[102] == false)) THEN
+                     handle_gbig_to_mag()
+              ENDIF
+            ENDIF
+
+            IF (($IN[100] == false) AND ($IN[101] == false) AND ($IN[102] == FALSE))  THEN
+                     handle_pdem_from_mag()
+            ENDIF
+
+			CASE 4 ; Screwdriver
+
+            IF (($IN[100] == false) AND ($IN[101] == true) AND ($IN[102] == FALSE)) THEN
+                     handle_gbig_to_mag()
+            ELSE
+              IF (($IN[100] == false) AND ($IN[101] == false) AND ($IN[102] == true)) THEN
+                     handle_pdem_to_mag()
+              ENDIF
+            ENDIF
+ 
+            IF (($IN[100] == false) AND ($IN[101] == false) AND ($IN[102] == FALSE))  THEN
+                     handle_sdriver_from_mag()
+            ENDIF
+
+		ENDSWITCH
+		command = 0
+	  
+	CASE 15 ; Change big gripper jaw
+	   ; not implemented yet
+	   command = 0
+	   
+   CASE 18 ; Take a screw out of the stock
+	   SWITCH $SEN_PINT[1]
+	     CASE 1
+	        ; Step 1
+	        handle_sdriver_get1_to()
+	     CASE 2
+	        ; Step 2
+	        handle_sdriver_get1_from()
+	   ENDSWITCH
+	   command = 0
+		
+	CASE 21 ; Toggle fixed matrix shape
+		IF $OUT[321] THEN
+			do_fixtpneum_shape_block()
+		ELSE
+			do_fixtpneum_shape_unblo()
+		ENDIF
+		command = 0
+		
+	CASE 22 ; Toggle variable matrix shape
+		IF $OUT[321] THEN
+			do_fixtvar_shape_block()
+		ELSE
+			do_fixtvar_shape_unblock()
+		ENDIF
+		command = 0
+	
+	CASE 23 ; Toggle matrix clamp
+		IF $OUT[321] THEN
+			do_fixtpneum_clamp()
+		ELSE
+			do_fixtpneum_unclamp()
+		ENDIF
+		command = 0
+		
+	CASE 41 ; Wait time
+      WAIT SEC $SEN_PREA[1]
+		command = 0
+		
+	CASE 42 ; Wait for input
+		WAIT FOR $IN[$SEN_PINT[1]]
+		command = 0
+
+	CASE 51 ; Toggle demonstration position
+      IF $OUT[321] THEN
+         handle_demopose_to()
+      ELSE
+         handle_demopose_from()
+      ENDIF
+      command = 0
+      
+   CASE 52 ; Calibration
+WAIT SEC 0.1
+      handle_calib($SEN_PINT[1])
+WAIT SEC 0.1
+      command = 0
+   
+   CASE 100 ; Stop
+      EXIT
+
+	DEFAULT ; unknown command
+		
+ENDSWITCH
+ENDLOOP
+; =============================================
+; Turn off RSI 
+ret = RSI_OFF()
+IF (ret <> RSIOK) THEN
+  HALT
+ENDIF
+
+END
+
+
+DEF extract_target_axis(target:OUT)
+	DECL AXIS target
+	target.A1 = $SEN_PREA[1]
+	target.A2 = $SEN_PREA[2]
+	target.A3 = $SEN_PREA[3]
+	target.A4 = $SEN_PREA[4]
+	target.A5 = $SEN_PREA[5]
+	target.A6 = $SEN_PREA[6]
+END
+
+DEF extract_target_pos(target:OUT)
+	DECL POS target
+	target.X = $SEN_PREA[1]
+	target.Y = $SEN_PREA[2]
+	target.Z = $SEN_PREA[3]
+	target.A = $SEN_PREA[4]
+	target.B = $SEN_PREA[5]
+	target.C = $SEN_PREA[6]
+END
+
+DEF copy_axis_vel_acc()
+	$VEL_AXIS[1] = $SEN_PREA[7]
+	$VEL_AXIS[2] = $SEN_PREA[7]
+	$VEL_AXIS[3] = $SEN_PREA[7]
+	$VEL_AXIS[4] = $SEN_PREA[7]
+	$VEL_AXIS[5] = $SEN_PREA[7]
+	$VEL_AXIS[6] = $SEN_PREA[7]
+	$ACC_AXIS[1] = $SEN_PREA[8]
+	$ACC_AXIS[2] = $SEN_PREA[8]
+	$ACC_AXIS[3] = $SEN_PREA[8]
+	$ACC_AXIS[4] = $SEN_PREA[8]
+	$ACC_AXIS[5] = $SEN_PREA[8]
+	$ACC_AXIS[6] = $SEN_PREA[8]
+END
+
+
+DEF copy_typed_vel_acc()
+	$VEL.CP = $SEN_PREA[7] ; web speed
+	$VEL.ORI1 = $SEN_PREA[8] ; swivelling speed
+	$VEL.ORI2 = $SEN_PREA[9] ; rotation speed
+	$ACC.CP = $SEN_PREA[10]	; web acceleration
+	$ACC.ORI1 = $SEN_PREA[11] ; swivelling acceleration
+	$ACC.ORI2 = $SEN_PREA[12] ; rotation acceleration
+END
+
+
+DEF set_null_world()
+	$BASE = $NULLFRAME
+   $TOOL = $NULLFRAME
+END

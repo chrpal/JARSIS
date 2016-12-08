@@ -1,0 +1,79 @@
+<ROOT>
+   <CONFIG>
+      <IP_NUMBER>134.61.13.28</IP_NUMBER>   <!-- IP-number of the external socket -->
+      <PORT>49152</PORT>                   <!-- Port-number of the external socket -->      
+      <SENTYPE>AgilusCmdMode</SENTYPE>        <!-- The name of your system send in <Sen Type="" > -->     
+      <ONLYSEND>FALSE</ONLYSEND>       <!-- TRUE means the client don't expect answers. Do not send anything to robot -->
+   </CONFIG>
+   <!-- RSI Data: TYPE=  "BOOL", "STRING", "LONG", "DOUBLE" -->
+   <!-- INDX= "INTERNAL" switch on internal read values. Needed by DEF_... -->
+   <!-- INDX= "nmb" Input/Output index of RSI-Object / Maximum of RSI Channels: 64  -->   
+   <!-- HOLDON="1", set this output index of RSI Object to the last value  -->   
+   <!-- DEF_Delay count the late packages and send it back to server  -->
+   <!-- DEF_Tech: .C = advance .T = main run / .C1 advance set function generator 1 -->
+   
+   <SEND>
+      <ELEMENTS>
+         <ELEMENT TAG="DEF_RIst" TYPE="DOUBLE" INDX="INTERNAL" />
+         <ELEMENT TAG="DEF_RSol" TYPE="DOUBLE" INDX="INTERNAL" />
+         <ELEMENT TAG="DEF_AIPos" TYPE="DOUBLE" INDX="INTERNAL" />
+         <ELEMENT TAG="DEF_ASPos" TYPE="DOUBLE" INDX="INTERNAL" />
+         <ELEMENT TAG="DEF_MACur" TYPE="DOUBLE" INDX="INTERNAL" />
+         <ELEMENT TAG="DEF_Delay" TYPE="LONG" INDX="INTERNAL" />
+         <ELEMENT TAG="CmdAck" TYPE="BOOL" INDX="1" />
+         <ELEMENT TAG="CmdAct" TYPE="LONG" INDX="2" />
+         <ELEMENT TAG="CmdFlag" TYPE="BOOL" INDX="3" />
+         <ELEMENT TAG="JobID"  TYPE="LONG" INDX="4" />
+         <ELEMENT TAG="GearTorque.A1" TYPE="DOUBLE" INDX="5" />
+         <ELEMENT TAG="GearTorque.A2" TYPE="DOUBLE" INDX="6" />
+         <ELEMENT TAG="GearTorque.A3" TYPE="DOUBLE" INDX="7" />
+         <ELEMENT TAG="GearTorque.A4" TYPE="DOUBLE" INDX="8" />
+         <ELEMENT TAG="GearTorque.A5" TYPE="DOUBLE" INDX="9" />
+         <ELEMENT TAG="GearTorque.A6" TYPE="DOUBLE" INDX="10" />
+         <ELEMENT TAG="UserSafety"  TYPE="BOOL" INDX="11" />
+         <ELEMENT TAG="PosCorr.X"  TYPE="DOUBLE" INDX="12" />
+         <ELEMENT TAG="PosCorr.Y"  TYPE="DOUBLE" INDX="13" />
+         <ELEMENT TAG="PosCorr.Z"  TYPE="DOUBLE" INDX="14" />
+         <ELEMENT TAG="PosCorr.A"  TYPE="DOUBLE" INDX="15" />
+         <ELEMENT TAG="PosCorr.B"  TYPE="DOUBLE" INDX="16" />
+         <ELEMENT TAG="PosCorr.C"  TYPE="DOUBLE" INDX="17" />
+      </ELEMENTS>
+   </SEND>
+   <RECEIVE>
+      <ELEMENTS>
+         <ELEMENT TAG="DEF_EStr" TYPE="STRING" INDX="INTERNAL" />
+         <ELEMENT TAG="CmdNew" TYPE="LONG" INDX="1" HOLDON="0"/>
+         <ELEMENT TAG="JobID" TYPE="LONG" INDX="2" HOLDON="0"/>
+         <ELEMENT TAG="Stop" TYPE="BOOL" INDX="3" HOLDON="0"/>
+         <ELEMENT TAG="PCReserve.pcres4" TYPE="BOOL" INDX="4" HOLDON="0"/>
+         <ELEMENT TAG="PCReal.pr1" TYPE="DOUBLE" INDX="5" HOLDON="0"/>
+         <ELEMENT TAG="PCReal.pr2" TYPE="DOUBLE" INDX="6" HOLDON="0"/>
+         <ELEMENT TAG="PCReal.pr3" TYPE="DOUBLE" INDX="7" HOLDON="0"/>
+         <ELEMENT TAG="PCReal.pr4" TYPE="DOUBLE" INDX="8" HOLDON="0"/>
+         <ELEMENT TAG="PCReal.pr5" TYPE="DOUBLE" INDX="9" HOLDON="0"/>
+         <ELEMENT TAG="PCReal.pr6" TYPE="DOUBLE" INDX="10" HOLDON="0"/>
+         <ELEMENT TAG="PCReal.pr7" TYPE="DOUBLE" INDX="11" HOLDON="0"/>
+         <ELEMENT TAG="PCReal.pr8" TYPE="DOUBLE" INDX="12" HOLDON="0"/>
+         <ELEMENT TAG="PCReal.pr9" TYPE="DOUBLE" INDX="13" HOLDON="0"/>
+         <ELEMENT TAG="PCReal.pr10" TYPE="DOUBLE" INDX="14" HOLDON="0"/>
+         <ELEMENT TAG="PCReal.pr11" TYPE="DOUBLE" INDX="15" HOLDON="0"/>
+         <ELEMENT TAG="PCReal.pr12" TYPE="DOUBLE" INDX="16" HOLDON="0"/>
+         <ELEMENT TAG="PCReal.pr13" TYPE="DOUBLE" INDX="17" HOLDON="0"/>
+         <ELEMENT TAG="PCReal.pr14" TYPE="DOUBLE" INDX="18" HOLDON="0"/>
+         <ELEMENT TAG="PCReal.pr15" TYPE="DOUBLE" INDX="19" HOLDON="0"/>
+         <ELEMENT TAG="PCReal.pr16" TYPE="DOUBLE" INDX="20" HOLDON="0"/>
+         <ELEMENT TAG="PCReal.pr17" TYPE="DOUBLE" INDX="21" HOLDON="0"/>
+         <ELEMENT TAG="PCReal.pr18" TYPE="DOUBLE" INDX="22" HOLDON="0"/>
+         <ELEMENT TAG="PCReal.pr19" TYPE="DOUBLE" INDX="23" HOLDON="0"/>
+         <ELEMENT TAG="PCReal.pr20" TYPE="DOUBLE" INDX="24" HOLDON="0"/>
+         <ELEMENT TAG="PCBool.pb1" TYPE="LONG" INDX="25" HOLDON="0"/>
+         <ELEMENT TAG="PCBool.pb2" TYPE="LONG" INDX="26" HOLDON="0"/>
+         <ELEMENT TAG="Corr.X" TYPE="DOUBLE" INDX="27" HOLDON="0"/>
+         <ELEMENT TAG="Corr.Y" TYPE="DOUBLE" INDX="28" HOLDON="0"/>
+         <ELEMENT TAG="Corr.Z" TYPE="DOUBLE" INDX="29" HOLDON="0"/>
+         <ELEMENT TAG="Corr.A" TYPE="DOUBLE" INDX="30" HOLDON="0"/>
+         <ELEMENT TAG="Corr.B" TYPE="DOUBLE" INDX="31" HOLDON="0"/>
+         <ELEMENT TAG="Corr.C" TYPE="DOUBLE" INDX="32" HOLDON="0"/>
+      </ELEMENTS>
+   </RECEIVE>
+</ROOT>

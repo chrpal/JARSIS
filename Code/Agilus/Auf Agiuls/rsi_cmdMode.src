@@ -1,0 +1,77 @@
+&ACCESS RVP
+&REL 29
+&PARAM TEMPLATE = C:\KRC\Roboter\Template\vorgabe
+&PARAM EDITMASK = *
+DEF rsi_cmdMode( )
+; =============================================
+; 
+; RSI EXAMPLE: ETHERNET communication
+; Realtime UDP data exchange with server application
+;
+; =============================================
+
+; Declaration of KRL variables
+DECL INT ret	; Return value for RSI commands
+DECL INT CONTID	; ContainerID
+
+;FOLD INI
+  ;FOLD BASISTECH INI
+    GLOBAL INTERRUPT DECL 3 WHEN $STOPMESS==TRUE DO IR_STOPM ( )
+    INTERRUPT ON 3 
+    BAS (#INITMOV,0 )
+  ;ENDFOLD (BASISTECH INI)
+  ;FOLD USER INI
+    ;Make your modifications here
+
+  ;ENDFOLD (USER INI)
+;ENDFOLD (INI)
+
+; Move to start position
+;PTP {A1 180, A2 -90, A3 90, A4 0, A5 90, A6 0}
+PTP $POS_ACT
+
+; Create RSI Context 
+ret = RSI_CREATE("cmdMode.rsi",CONTID,TRUE)
+;msgnotify(ret)
+
+IF (ret == RSIFILENOTFOUND) THEN
+  HALT
+ENDIF
+IF (ret == RSIINVFILE) THEN
+  HALT
+ENDIF
+IF (ret == RSINOMEMORY) THEN
+  HALT
+ENDIF
+IF (ret == RSIEXTLIBNOTFOUND) THEN
+  HALT
+ENDIF
+IF (ret == RSINOTLINKED) THEN
+  HALT
+ENDIF
+IF (ret == RSILNKCIRCLE) THEN
+  HALT
+ENDIF
+IF (ret <> RSIOK) THEN
+  HALT
+ENDIF
+
+; Start RSI execution
+ret = RSI_ON(#RELATIVE)
+IF (ret <> RSIOK) THEN
+  HALT
+ENDIF
+HALT
+; Sensor guided movement
+RSI_MOVECORR()
+
+; Turn off RSI 
+ret = RSI_OFF()
+IF (ret <> RSIOK) THEN
+  HALT
+ENDIF
+
+;PTP {A1 180, A2 -90, A3 90, A4 0, A5 90, A6 0}
+PTP $POS_ACT
+
+END
