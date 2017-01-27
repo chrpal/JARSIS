@@ -1,0 +1,9 @@
+T:\pll_mg\Agilus\KukaRsi\obj\Debug\KukaRsi.csprojResolveAssemblyReference.cache
+D:\Users\slb\JARSIS\Code\Agilus\KukaRsi\bin\Debug\KukaRsi.dll
+D:\Users\slb\JARSIS\Code\Agilus\KukaRsi\bin\Debug\KukaRsi.pdb
+D:\Users\slb\JARSIS\Code\Agilus\KukaRsi\obj\Debug\KukaRsi.dll
+D:\Users\slb\JARSIS\Code\Agilus\KukaRsi\obj\Debug\KukaRsi.pdb
+E:\Neuer Ordner\KukaRsi\obj\Debug\KukaRsi.dll
+E:\Neuer Ordner\KukaRsi\bin\Debug\KukaRsi.dll
+E:\Neuer Ordner\KukaRsi\bin\Debug\KukaRsi.pdb
+E:\Neuer Ordner\KukaRsi\obj\Debug\KukaRsi.pdb
