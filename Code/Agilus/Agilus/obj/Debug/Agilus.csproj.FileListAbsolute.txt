@@ -1,4 +1,0 @@
-C:\Users\Michelle\Desktop\WZL\Agilus Steuerung\Agilus\Agilus\Agilus\bin\Debug\Agilus.exe.config
-C:\Users\Michelle\Desktop\WZL\Agilus Steuerung\Agilus\Agilus\Agilus\obj\Debug\Agilus.csprojResolveAssemblyReference.cache
-T:\pll_mg\Agilus\Agilus\bin\Debug\Agilus.exe.config
-T:\pll_mg\Agilus\Agilus\obj\Debug\Agilus.csprojResolveAssemblyReference.cache
