@@ -36,6 +36,7 @@ namespace KukaRsi
         private IPEndPoint LocalEndpoint;
         // UDP communication client
         private UdpClient Communicator;
+
         // Communication thread
         private Thread CommunicationThread;
         // Communication stop flag
@@ -93,18 +94,25 @@ namespace KukaRsi
         /// </summary>
         private void Run()
         {
+            EndPoint ep = null;
+            IPEndPoint targetEndpoint = null;
             this.Communicator = new UdpClient();
             this.Communicator.Client.Bind(this.LocalEndpoint);
+            
+
+            byte[] data = new byte[512];
+            int iLen = 0;
             // Reconnect until should stop
             while (!this.ShouldStop)
             {
                 try
                 {
+                    
                     // Wait for the first message from the robot
                     this.Communicator.Client.ReceiveTimeout = 50;
-                    IPEndPoint targetEndpoint = null;
                     // Receive
                     byte[] receivedBytes = this.Communicator.Receive(ref targetEndpoint);
+                    Console.WriteLine("client connected");
                     // Decode
                     string receivedString = Encoding.ASCII.GetString(receivedBytes);
                     // Deserialize
@@ -122,6 +130,7 @@ namespace KukaRsi
                     // Message loop until should stop
                     while (!this.ShouldStop)
                     {
+                        Console.WriteLine("Receiving data");
                         // Check for a stored message, otherwise use default
                         commandMessage = this.Pipe.Pull();
                         sendMessage = (commandMessage != null) ? commandMessage : this.DefaultMessage;

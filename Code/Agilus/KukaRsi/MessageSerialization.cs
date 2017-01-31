@@ -12,7 +12,7 @@ namespace KukaRsi
     /// </summary>
     /// <typeparam name="MessageToRobot">The template for messages to the robot</typeparam>
     /// <typeparam name="MessageFromRobot">The template for messages from the robot</typeparam>
-    internal class MessageSerialization<MessageToRobot, MessageFromRobot>
+    public class MessageSerialization<MessageToRobot, MessageFromRobot>
         where MessageToRobot : BaseMessageToRobot
         where MessageFromRobot : BaseMessageFromRobot
     {
