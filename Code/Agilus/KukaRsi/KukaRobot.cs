@@ -6,6 +6,7 @@ using System.Threading;
 
 // Import the base messages
 using KukaRsi.Messages;
+using System.IO;
 
 namespace KukaRsi
 {
@@ -94,14 +95,13 @@ namespace KukaRsi
         /// </summary>
         private void Run()
         {
-            EndPoint ep = null;
             IPEndPoint targetEndpoint = null;
             this.Communicator = new UdpClient();
             this.Communicator.Client.Bind(this.LocalEndpoint);
             
 
-            byte[] data = new byte[512];
-            int iLen = 0;
+            int iCounter = 0;
+
             // Reconnect until should stop
             while (!this.ShouldStop)
             {
@@ -109,12 +109,15 @@ namespace KukaRsi
                 {
                     
                     // Wait for the first message from the robot
-                    this.Communicator.Client.ReceiveTimeout = 50;
+                    this.Communicator.Client.ReceiveTimeout = 15;
                     // Receive
                     byte[] receivedBytes = this.Communicator.Receive(ref targetEndpoint);
                     Console.WriteLine("client connected");
                     // Decode
                     string receivedString = Encoding.ASCII.GetString(receivedBytes);
+
+                    //File.WriteAllText("./recmsg" + Convert.ToString(iCounter) + ".txt", receivedString);
+
                     // Deserialize
                     MessageFromRobot receivedMessage = this.Serialization.Deserialize(receivedString);
                     this.RaiseReceived(receivedMessage);
@@ -122,6 +125,8 @@ namespace KukaRsi
                     this.SetConnectionState(true);
                     // Predefine for sending
                     MessageToRobot commandMessage, sendMessage;
+                    commandMessage = this.Pipe.Pull();
+
                     string sendString;
                     byte[] sendBytes;
                     // Connect to the robot
@@ -130,14 +135,16 @@ namespace KukaRsi
                     // Message loop until should stop
                     while (!this.ShouldStop)
                     {
-                        Console.WriteLine("Receiving data");
+                        Console.WriteLine("Sending data");
                         // Check for a stored message, otherwise use default
-                        commandMessage = this.Pipe.Pull();
+                        //#####commandMessage = this.Pipe.Pull();
                         sendMessage = (commandMessage != null) ? commandMessage : this.DefaultMessage;
                         // Copy IPOC from the last received message
                         sendMessage.SetIpoc(receivedMessage.Ipoc);
                         // Serialize
                         sendString = this.Serialization.Serialize(sendMessage);
+                        sendString = sendString.Replace("\t", "").Replace("\n", "").Replace("  ","");
+                        //File.WriteAllText("./senmsg" + Convert.ToString(iCounter) + ".txt", sendString);
                         // Encode
                         sendBytes = Encoding.ASCII.GetBytes(sendString);
                         // Send
@@ -146,6 +153,8 @@ namespace KukaRsi
                         receivedBytes = this.Communicator.Receive(ref targetEndpoint);
                         // Decode
                         receivedString = Encoding.ASCII.GetString(receivedBytes);
+                        //File.WriteAllText("./recmsg" + Convert.ToString(iCounter++) + ".txt", receivedString);
+                        Console.WriteLine("Receiving data");
                         // Deserialize
                         receivedMessage = this.Serialization.Deserialize(receivedString);
                         this.RaiseReceived(receivedMessage);
