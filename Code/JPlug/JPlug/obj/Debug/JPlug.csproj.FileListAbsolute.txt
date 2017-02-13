@@ -1,0 +1,7 @@
+D:\Projekte\20161021_SWE_Aufgabe\Plugin Container\JPlug\JPlug\obj\Debug\JPlug.csprojResolveAssemblyReference.cache
+D:\Projekte\20161021_SWE_Aufgabe\Plugin Container\JPlug\JPlug\bin\Debug\JPlug.exe
+D:\Projekte\20161021_SWE_Aufgabe\Plugin Container\JPlug\JPlug\bin\Debug\JPlug.pdb
+D:\Projekte\20161021_SWE_Aufgabe\Plugin Container\JPlug\JPlug\bin\Debug\JPlugContainer.dll
+D:\Projekte\20161021_SWE_Aufgabe\Plugin Container\JPlug\JPlug\bin\Debug\JPlugContainer.pdb
+D:\Projekte\20161021_SWE_Aufgabe\Plugin Container\JPlug\JPlug\obj\Debug\JPlug.exe
+D:\Projekte\20161021_SWE_Aufgabe\Plugin Container\JPlug\JPlug\obj\Debug\JPlug.pdb

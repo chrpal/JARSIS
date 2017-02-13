@@ -1,0 +1,2 @@
+﻿- Integrate D programming language
+- Introspection of D: http://forum.dlang.org/post/itaaie$1rco$1@digitalmars.com

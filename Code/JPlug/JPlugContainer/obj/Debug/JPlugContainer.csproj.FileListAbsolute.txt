@@ -1,0 +1,4 @@
+D:\Projekte\20161021_SWE_Aufgabe\Plugin Container\JPlug\JPlugContainer\bin\Debug\JPlugContainer.dll
+D:\Projekte\20161021_SWE_Aufgabe\Plugin Container\JPlug\JPlugContainer\bin\Debug\JPlugContainer.pdb
+D:\Projekte\20161021_SWE_Aufgabe\Plugin Container\JPlug\JPlugContainer\obj\Debug\JPlugContainer.dll
+D:\Projekte\20161021_SWE_Aufgabe\Plugin Container\JPlug\JPlugContainer\obj\Debug\JPlugContainer.pdb
