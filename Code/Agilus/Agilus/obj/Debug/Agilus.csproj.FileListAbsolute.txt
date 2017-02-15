@@ -1,0 +1,32 @@
+C:\Users\Michelle\Desktop\WZL\Agilus Steuerung\Agilus\Agilus\Agilus\bin\Debug\Agilus.exe.config
+C:\Users\Michelle\Desktop\WZL\Agilus Steuerung\Agilus\Agilus\Agilus\obj\Debug\Agilus.csprojResolveAssemblyReference.cache
+C:\Users\Michelle\Desktop\WZL\Agilus Steuerung\Agilus\Agilus\Agilus\bin\Debug\Agilus.exe
+C:\Users\Michelle\Desktop\WZL\Agilus Steuerung\Agilus\Agilus\Agilus\bin\Debug\Agilus.pdb
+C:\Users\Michelle\Desktop\WZL\Agilus Steuerung\Agilus\Agilus\Agilus\bin\Debug\KukaRsi.dll
+C:\Users\Michelle\Desktop\WZL\Agilus Steuerung\Agilus\Agilus\Agilus\bin\Debug\KukaRsi.pdb
+C:\Users\Michelle\Desktop\WZL\Agilus Steuerung\Agilus\Agilus\Agilus\obj\Debug\Agilus.exe
+C:\Users\Michelle\Desktop\WZL\Agilus Steuerung\Agilus\Agilus\Agilus\obj\Debug\Agilus.pdb
+T:\pll_mg\Agilus\Agilus\bin\Debug\Agilus.exe.config
+T:\pll_mg\Agilus\Agilus\obj\Debug\Agilus.exe
+T:\pll_mg\Agilus\Agilus\obj\Debug\Agilus.pdb
+T:\pll_mg\Agilus\Agilus\obj\Debug\Agilus.csprojResolveAssemblyReference.cache
+T:\pll_mg\Agilus\Agilus\bin\Debug\Agilus.exe
+T:\pll_mg\Agilus\Agilus\bin\Debug\Agilus.pdb
+T:\pll_mg\Agilus\Agilus\bin\Debug\KukaRsi.dll
+T:\pll_mg\Agilus\Agilus\bin\Debug\KukaRsi.pdb
+D:\Code\KUKA Control\Agilus\Agilus\bin\Debug\Agilus.exe.config
+D:\Code\KUKA Control\Agilus\Agilus\obj\Debug\Agilus.exe
+D:\Code\KUKA Control\Agilus\Agilus\obj\Debug\Agilus.pdb
+D:\Code\KUKA Control\Agilus\Agilus\obj\Debug\Agilus.csprojResolveAssemblyReference.cache
+D:\Code\KUKA Control\Agilus\Agilus\bin\Debug\Agilus.exe
+D:\Code\KUKA Control\Agilus\Agilus\bin\Debug\Agilus.pdb
+D:\Code\KUKA Control\Agilus\Agilus\bin\Debug\KukaRsi.dll
+D:\Code\KUKA Control\Agilus\Agilus\bin\Debug\KukaRsi.pdb
+D:\Projekte\20161021_JARSIS\Repo\JARSIS\Code\Agilus\Agilus\bin\Debug\Agilus.exe.config
+D:\Projekte\20161021_JARSIS\Repo\JARSIS\Code\Agilus\Agilus\obj\Debug\Agilus.exe
+D:\Projekte\20161021_JARSIS\Repo\JARSIS\Code\Agilus\Agilus\obj\Debug\Agilus.pdb
+D:\Projekte\20161021_JARSIS\Repo\JARSIS\Code\Agilus\Agilus\obj\Debug\Agilus.csprojResolveAssemblyReference.cache
+D:\Projekte\20161021_JARSIS\Repo\JARSIS\Code\Agilus\Agilus\bin\Debug\Agilus.exe
+D:\Projekte\20161021_JARSIS\Repo\JARSIS\Code\Agilus\Agilus\bin\Debug\Agilus.pdb
+D:\Projekte\20161021_JARSIS\Repo\JARSIS\Code\Agilus\Agilus\bin\Debug\KukaRsi.dll
+D:\Projekte\20161021_JARSIS\Repo\JARSIS\Code\Agilus\Agilus\bin\Debug\KukaRsi.pdb

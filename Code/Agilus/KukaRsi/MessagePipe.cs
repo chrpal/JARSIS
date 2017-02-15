@@ -65,7 +65,7 @@ namespace KukaRsi
             lock (this.InternalLock)
             {
                 message = this.CurrentMessage;
-                this.CurrentMessage = null;
+                //this.CurrentMessage = null;
             }
             return message;
         }

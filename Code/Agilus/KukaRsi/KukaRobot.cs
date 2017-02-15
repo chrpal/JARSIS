@@ -125,7 +125,6 @@ namespace KukaRsi
                     this.SetConnectionState(true);
                     // Predefine for sending
                     MessageToRobot commandMessage, sendMessage;
-                    commandMessage = this.Pipe.Pull();
 
                     string sendString;
                     byte[] sendBytes;
@@ -137,13 +136,14 @@ namespace KukaRsi
                     {
                         Console.WriteLine("Sending data");
                         // Check for a stored message, otherwise use default
-                        //#####commandMessage = this.Pipe.Pull();
+                        commandMessage = this.Pipe.Pull();
                         sendMessage = (commandMessage != null) ? commandMessage : this.DefaultMessage;
                         // Copy IPOC from the last received message
                         sendMessage.SetIpoc(receivedMessage.Ipoc);
                         // Serialize
                         sendString = this.Serialization.Serialize(sendMessage);
-                        sendString = sendString.Replace("\t", "").Replace("\n", "").Replace("  ","");
+                        Console.WriteLine(sendString+"\n\n\n");
+                        //sendString = sendString.Replace("\t", "").Replace("\n", "").Replace("  ","");
                         //File.WriteAllText("./senmsg" + Convert.ToString(iCounter) + ".txt", sendString);
                         // Encode
                         sendBytes = Encoding.ASCII.GetBytes(sendString);
@@ -157,6 +157,7 @@ namespace KukaRsi
                         Console.WriteLine("Receiving data");
                         // Deserialize
                         receivedMessage = this.Serialization.Deserialize(receivedString);
+                        Console.WriteLine(receivedString + "\n\n\n");
                         this.RaiseReceived(receivedMessage);
                     }
                 } 
